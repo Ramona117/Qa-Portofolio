@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142b35">
+  <meta name="description" content="Muhammad Rhamanda Fadilla — Software QA Engineer portfolio. Manual testing, automation testing, API testing, FinTech, F&B and loyalty systems.">
+  <title>Muhammad Rhamanda Fadilla | Software QA Engineer</title>
+  <style>
+    :root{
+      --ink:#172b34; --muted:#5c6e75; --paper:#f6f8f7; --white:#fff;
+      --teal:#167d78; --teal2:#d9efeb; --line:#dce6e3; --soft:#edf3f1;
+      --shadow:0 18px 50px rgba(23,43,52,.08); --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(246,248,247,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(220,230,227,.8)}
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em}
+    .brand-mark{width:36px;height:36px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:13px;letter-spacing:0}
+    .navlinks{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:13px;font-weight:650}
+    .navlinks a:hover{color:var(--teal)}
+    .navright{display:flex;align-items:center;gap:10px}
+    .lang{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#fff;color:var(--ink);font-size:12px;font-weight:800;cursor:pointer}
+    .menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:8px 10px}
+    .hero{padding:78px 0 56px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:46px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:var(--teal2);color:#11645f;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.1em}
+    .dot{width:7px;height:7px;background:var(--teal);border-radius:50%}
+    h1{font-size:clamp(42px,6.4vw,76px);line-height:.99;letter-spacing:-.065em;margin:24px 0 20px;max-width:780px}
+    h1 span{color:var(--teal)}
+    .lead{font-size:17px;line-height:1.75;color:var(--muted);max-width:650px;margin:0 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 18px;font-weight:800;font-size:13px;border:1px solid var(--ink);transition:.2s}
+    .btn.primary{background:var(--ink);color:white}
+    .btn.secondary{background:transparent}
+    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .hero-card{position:relative;background:var(--ink);border-radius:28px;padding:27px;color:#fff;min-height:350px;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-card:before{content:"";position:absolute;width:230px;height:230px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-65px;top:-55px;box-shadow:0 0 0 28px rgba(255,255,255,.035),0 0 0 58px rgba(255,255,255,.025)}
+    .card-kicker{font-size:11px;color:#a8c8c5;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+    .monogram{font-size:70px;line-height:1;letter-spacing:-.08em;font-weight:900;margin:42px 0 20px;position:relative}
+    .hero-card h2{font-size:20px;letter-spacing:-.03em;margin:0 0 7px}
+    .hero-card p{font-size:13px;color:#c3d1d4;margin:0;max-width:260px}
+    .pill-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:23px}
+    .pill{font-size:10px;font-weight:750;padding:7px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#e7f2f0}
+    section{padding:62px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:27px}
+    .section-index{color:var(--teal);font-size:11px;letter-spacing:.12em;font-weight:900;text-transform:uppercase}
+    h2.section-title{font-size:clamp(29px,4vw,43px);letter-spacing:-.055em;line-height:1.1;margin:8px 0 0}
+    .section-desc{max-width:430px;color:var(--muted);font-size:14px;margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:25px}
+    .panel h3{font-size:16px;margin:0 0 10px;letter-spacing:-.025em}
+    .panel p{font-size:14px;color:var(--muted);margin:0}
+    .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .principle{background:var(--soft);border-radius:17px;padding:18px}
+    .principle .num{color:var(--teal);font-weight:900;font-size:11px;letter-spacing:.08em}
+    .principle h3{font-size:14px;margin:8px 0 5px}
+    .principle p{font-size:12px;color:var(--muted);margin:0}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .skill-card{padding:22px;border:1px solid var(--line);border-radius:19px;background:#fff}
+    .skill-icon{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:var(--teal2);color:var(--teal);font-weight:900;margin-bottom:17px}
+    .skill-card h3{margin:0 0 8px;font-size:16px}
+    .skill-card p{margin:0;color:var(--muted);font-size:13px}
+    .taglist{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+    .tag{background:var(--soft);border-radius:8px;padding:6px 9px;font-size:11px;font-weight:750;color:#39515a}
+    .tools{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .tool{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:750}
+    .domain-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .domain{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;display:flex;gap:15px}
+    .domain-mark{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;background:var(--soft);border-radius:14px;color:var(--teal);font-weight:900}
+    .domain h3{margin:0 0 5px;font-size:15px}
+    .domain p{margin:0;color:var(--muted);font-size:13px}
+    .case-list{display:grid;gap:16px}
+    .case{display:grid;grid-template-columns:.62fr 1fr;gap:24px;padding:25px;background:#fff;border:1px solid var(--line);border-radius:22px}
+    .case-label{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--teal);text-transform:uppercase}
+    .case h3{font-size:20px;line-height:1.2;letter-spacing:-.04em;margin:9px 0}
+    .case .note{font-size:12px;color:var(--muted)}
+    .case-content h4{font-size:12px;margin:0 0 5px;text-transform:uppercase;letter-spacing:.06em;color:#3d5961}
+    .case-content p{font-size:13px;color:var(--muted);margin:0 0 13px}
+    .case-content p:last-child{margin-bottom:0}
+    .artifacts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .artifact{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;overflow:hidden}
+    .artifact h3{margin:0 0 6px;font-size:16px}
+    .artifact .sub{font-size:12px;color:var(--muted);margin:0 0 16px}
+    .mini-table{width:100%;border-collapse:collapse;font-size:11px}
+    .mini-table th{text-align:left;background:var(--soft);padding:9px 8px;color:#35525b}
+    .mini-table td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--muted)}
+    .bug-box{background:#f7f9f8;border:1px dashed #bdcfcb;border-radius:13px;padding:13px;font-size:12px;color:var(--muted)}
+    .bug-box b{color:var(--ink)}
+    .process{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .step{padding:19px;border:1px solid var(--line);border-radius:17px;background:#fff}
+    .step .stepnum{font-size:11px;color:var(--teal);font-weight:900}
+    .step h3{font-size:14px;margin:7px 0 5px}
+    .step p{font-size:12px;color:var(--muted);margin:0}
+    .contact{background:var(--ink);color:#fff;border-radius:28px;padding:35px;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}
+    .contact h2{font-size:clamp(28px,4vw,43px);line-height:1.05;letter-spacing:-.05em;margin:8px 0 12px}
+    .contact p{max-width:570px;color:#c3d1d4;font-size:14px;margin:0}
+    .contact .btn{background:#fff;color:var(--ink);border-color:#fff;white-space:nowrap}
+    .contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;font-size:12px;color:#d8e5e3}
+    .contact-links a{text-decoration:underline;text-underline-offset:4px}
+    footer{padding:24px 0 35px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:20px}
+    .disclaimer{border-left:3px solid var(--teal);padding:12px 15px;background:var(--soft);border-radius:0 12px 12px 0;color:var(--muted);font-size:12px;margin-top:18px}
+    [data-lang="id"]{display:none}
+    body.id [data-lang="en"]{display:none}
+    body.id [data-lang="id"]{display:initial}
+    .block[data-lang="id"]{display:none}
+    body.id .block[data-lang="id"]{display:block}
+    body.id .inline[data-lang="id"]{display:inline}
+    @media(max-width:850px){
+      .navlinks{display:none;position:absolute;top:74px;left:0;right:0;padding:20px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+      .navlinks.open{display:flex}.menu-btn{display:block}
+      .hero-grid{grid-template-columns:1fr;gap:28px}.hero{padding-top:50px}
+      .hero-card{min-height:300px}.monogram{margin:28px 0 15px}
+      .section-head{display:block}.section-desc{margin-top:12px}
+      .skills-grid{grid-template-columns:1fr 1fr}.case{grid-template-columns:1fr;gap:12px}
+      .contact{grid-template-columns:1fr}.contact .btn{justify-self:start}
+    }
+    @media(max-width:580px){
+      .wrap{width:min(100% - 28px,1120px)}nav{height:66px}.navlinks{top:66px}
+      .brand{font-size:13px}.brand-mark{width:32px;height:32px}
+      .hero{padding:42px 0 34px}h1{font-size:46px}.lead{font-size:15px}
+      section{padding:44px 0}.about-grid,.skills-grid,.domain-list,.artifacts,.process,.principles{grid-template-columns:1fr}
+      .panel{padding:20px}.case{padding:20px}.contact{padding:25px}
+      footer{flex-direction:column}.mini-table{font-size:10px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home"><span class="brand-mark">MR</span><span>Rhamanda<span style="color:var(--teal)">.</span></span></a>
+        <div class="navlinks" id="navlinks">
+          <a href="#about"><span data-lang="en">About</span><span data-lang="id">Profil</span></a>
+          <a href="#skills"><span data-lang="en">Skills</span><span data-lang="id">Keahlian</span></a>
+          <a href="#experience"><span data-lang="en">Experience</span><span data-lang="id">Pengalaman</span></a>
+          <a href="#projects"><span data-lang="en">Case Studies</span><span data-lang="id">Studi Kasus</span></a>
+          <a href="#contact"><span data-lang="en">Contact</span><span data-lang="id">Kontak</span></a>
+        </div>
+        <div class="navright">
+          <button class="lang" id="langToggle" aria-label="Switch language">ID / EN</button>
+          <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span><span data-lang="en">Software Quality Assurance</span><span data-lang="id">Quality Assurance Perangkat Lunak</span></div>
+          <h1>Muhammad<br>Rhamanda<br><span>Fadilla.</span></h1>
+          <p class="lead" data-lang="en">Software QA Engineer focused on building confidence in digital products through thoughtful manual testing, automation, API validation, and clear quality documentation.</p>
+          <p class="lead" data-lang="id">Software QA Engineer yang berfokus pada kualitas produk digital melalui manual testing, automation testing, validasi API, dan dokumentasi kualitas yang jelas.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects"><span data-lang="en">Explore case studies</span><span data-lang="id">Lihat studi kasus</span> <span aria-hidden="true">↘</span></a>
+            <a class="btn secondary" href="#contact"><span data-lang="en">Get in touch</span><span data-lang="id">Hubungi saya</span></a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div class="card-kicker" data-lang="en">Quality mindset / Practical testing</div>
+          <div class="card-kicker" data-lang="id">Pola pikir kualitas / Pengujian praktis</div>
+          <div class="monogram">QA<span style="color:#68c5bb">.</span></div>
+          <h2 data-lang="en">Test with purpose.</h2><h2 data-lang="id">Menguji dengan tujuan.</h2>
+          <p data-lang="en">Understand the requirement. Explore the risk. Communicate the evidence.</p>
+          <p data-lang="id">Pahami kebutuhan. Telusuri risiko. Sampaikan bukti.</p>
+          <div class="pill-row"><span class="pill">Manual QA</span><span class="pill">Automation</span><span class="pill">API Testing</span><span class="pill">FinTech</span><span class="pill">F&amp;B</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-index">01 / <span data-lang="en">Profile</span><span data-lang="id">Profil</span></div><h2 class="section-title" data-lang="en">Quality is more than<br>checking a box.</h2><h2 class="section-title" data-lang="id">Kualitas lebih dari<br>sekadar checklist.</h2></div>
+          <p class="section-desc" data-lang="en">A bilingual snapshot of my approach, experience areas, and the way I support software delivery.</p>
+          <p class="section-desc" data-lang="id">Ringkasan bilingual tentang pendekatan, area pengalaman, dan kontribusi saya dalam proses pengembangan perangkat lunak.</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel">
+            <h3 data-lang="en">Professional summary</h3><h3 data-lang="id">Ringkasan profesional</h3>
+            <p data-lang="en">I have experience testing products in FinTech and F&amp;B environments, including loyalty services, point-of-sale workflows, internal business systems, and restaurant reservation contexts. My work spans functional and UI testing, API checks, test documentation, defect reporting, and collaboration with delivery teams.</p>
+            <p data-lang="id">Saya memiliki pengalaman menguji produk di lingkungan FinTech dan F&amp;B, termasuk layanan loyalty, alur point-of-sale, sistem bisnis internal, dan konteks reservasi restoran. Pekerjaan saya mencakup functional dan UI testing, pemeriksaan API, dokumentasi pengujian, pelaporan defect, serta kolaborasi dengan tim delivery.</p>
+          </article>
+          <article class="panel">
+            <h3 data-lang="en">Education &amp; working style</h3><h3 data-lang="id">Pendidikan &amp; cara kerja</h3>
+            <p data-lang="en"><b>Bachelor’s degree in Information Systems</b><br>Universitas Brawijaya · 2020<br><br>Familiar with Agile, Waterfall, and SDLC-based workflows. I aim to make findings reproducible, useful, and easy for the team to act on.</p>
+            <p data-lang="id"><b>Sarjana Sistem Informasi</b><br>Universitas Brawijaya · 2020<br><br>Terbiasa dengan alur kerja Agile, Waterfall, dan SDLC. Saya berupaya membuat temuan yang dapat direproduksi, berguna, dan mudah ditindaklanjuti tim.</p>
+          </article>
+        </div>
+        <div class="principles">
+          <div class="principle"><div class="num">01</div><h3 data-lang="en">Risk-aware</h3><h3 data-lang="id">Berbasis risiko</h3><p data-lang="en">Prioritize important journeys, boundaries, and failure paths.</p><p data-lang="id">Memprioritaskan alur penting, batas nilai, dan skenario kegagalan.</p></div>
+          <div class="principle"><div class="num">02</div><h3 data-lang="en">Evidence-led</h3><h3 data-lang="id">Berbasis bukti</h3><p data-lang="en">Capture clear steps and expected vs actual behavior.</p><p data-lang="id">Mencatat langkah jelas serta hasil aktual dan ekspektasi.</p></div>
+          <div class="principle"><div class="num">03</div><h3 data-lang="en">Team-minded</h3><h3 data-lang="id">Kolaboratif</h3><p data-lang="en">Share findings so teams can make informed decisions.</p><p data-lang="id">Menyampaikan temuan agar tim dapat mengambil keputusan tepat.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" style="background:#edf3f1">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-index">02 / <span data-lang="en">Capabilities</span><span data-lang="id">Kapabilitas</span></div><h2 class="section-title" data-lang="en">Tools &amp; testing skills.</h2><h2 class="section-title" data-lang="id">Tools &amp; keahlian testing.</h2></div>
+          <p class="section-desc" data-lang="en">A practical toolkit for validating user journeys, system behavior, and integrations.</p>
+          <p class="section-desc" data-lang="id">Perangkat kerja untuk memvalidasi alur pengguna, perilaku sistem, dan integrasi.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card"><div class="skill-icon">01</div><h3>Manual Testing</h3><p data-lang="en">Functional and UI checks, positive/negative paths, regression-oriented validation, and exploratory testing where appropriate.</p><p data-lang="id">Pemeriksaan fungsional dan UI, skenario positif/negatif, validasi regresi, serta exploratory testing sesuai kebutuhan.</p><div class="taglist"><span class="tag">Functional</span><span class="tag">UI</span><span class="tag">Regression</span><span class="tag">Exploratory</span></div></article>
+          <article class="skill-card"><div class="skill-icon">02</div><h3>Automation Testing</h3><p data-lang="en">Use automation tools to support repeatable checks and stable user journeys.</p><p data-lang="id">Menggunakan tools otomasi untuk mendukung pemeriksaan berulang dan alur pengguna yang stabil.</p><div class="taglist"><span class="tag">Selenium</span><span class="tag">Katalon Studio</span></div></article>
+          <article class="skill-card"><div class="skill-icon">03</div><h3>API Testing</h3><p data-lang="en">Validate requests, responses, status codes, payload fields, and expected API behavior.</p><p data-lang="id">Memvalidasi request, response, status code, field payload, dan perilaku API yang diharapkan.</p><div class="taglist"><span class="tag">Postman</span><span class="tag">Hoppscotch</span></div></article>
+        </div>
+        <div class="tools" aria-label="Tools">
+          <span class="tool">Postman</span><span class="tool">Hoppscotch</span><span class="tool">Selenium</span><span class="tool">Katalon Studio</span><span class="tool">JIRA</span><span class="tool">Asana</span><span class="tool">Vysor</span><span class="tool">Figma</span>
+        </div>
+        <div class="disclaimer"><span data-lang="en">Tool list reflects tools previously shared in my profile. Hands-on depth may vary by tool and project.</span><span data-lang="id">Daftar tools mengacu pada informasi profil yang pernah dibagikan. Tingkat pengalaman praktik dapat berbeda sesuai tools dan proyek.</span></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-index">03 / <span data-lang="en">Domain experience</span><span data-lang="id">Pengalaman domain</span></div><h2 class="section-title" data-lang="en">Different products.<br>One quality mindset.</h2><h2 class="section-title" data-lang="id">Produk berbeda.<br>Pola pikir kualitas.</h2></div>
+          <p class="section-desc" data-lang="en">Experience areas presented without confidential company names or unsupported performance claims.</p>
+          <p class="section-desc" data-lang="id">Area pengalaman ditampilkan tanpa nama perusahaan rahasia atau klaim performa yang belum terverifikasi.</p>
+        </div>
+        <div class="domain-list">
+          <article class="domain"><div class="domain-mark">FT</div><div><h3>FinTech &amp; Digital Wallet</h3><p data-lang="en">Digital wallet and banking-related workflows, voucher/reward rules, user access, and transaction-related validations.</p><p data-lang="id">Alur dompet digital dan perbankan, aturan voucher/reward, akses pengguna, dan validasi terkait transaksi.</p></div></article>
+          <article class="domain"><div class="domain-mark">FB</div><div><h3>F&amp;B &amp; POS</h3><p data-lang="en">Point-of-sale workflows, ordering, purchase transactions, and restaurant operations.</p><p data-lang="id">Alur point-of-sale, pemesanan, transaksi pembelian, dan operasional restoran.</p></div></article>
+          <article class="domain"><div class="domain-mark">LM</div><div><h3>Loyalty Management Systems</h3><p data-lang="en">Validating user interactions with loyalty services and contributing testing findings to quality decisions.</p><p data-lang="id">Memvalidasi interaksi pengguna pada layanan loyalty dan menyumbangkan temuan pengujian untuk keputusan kualitas.</p></div></article>
+          <article class="domain"><div class="domain-mark">IS</div><div><h3>Internal Business Systems</h3><p data-lang="en">HRIS and petty-cash workflows, role-based access, business rules, and data correctness.</p><p data-lang="id">Alur HRIS dan petty cash, akses berbasis peran, aturan bisnis, dan ketepatan data.</p></div></article>
+          <article class="domain"><div class="domain-mark">IoT</div><div><h3>Reservation &amp; IoT Context</h3><p data-lang="en">Customer-facing reservation and back-office management across tablet/mobile contexts, with functional and UI checks.</p><p data-lang="id">Reservasi pelanggan dan pengelolaan back-office pada konteks tablet/mobile, dengan pemeriksaan fungsional dan UI.</p></div></article>
+          <article class="domain"><div class="domain-mark">WEB</div><div><h3>Cross-platform Testing</h3><p data-lang="en">Web, mobile, and desktop application testing, plus hardware-related testing contexts.</p><p data-lang="id">Pengujian aplikasi web, mobile, desktop, serta konteks pengujian terkait perangkat keras.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="background:#edf3f1">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-index">04 / <span data-lang="en">Selected case studies</span><span data-lang="id">Studi kasus pilihan</span></div><h2 class="section-title" data-lang="en">How I approach a test.</h2><h2 class="section-title" data-lang="id">Cara saya mendekati pengujian.</h2></div>
+          <p class="section-desc" data-lang="en">Representative examples based on known project domains. They are not claims of measured project outcomes.</p>
+          <p class="section-desc" data-lang="id">Contoh representatif berdasarkan domain proyek yang diketahui, bukan klaim hasil proyek yang telah diukur.</p>
+        </div>
+        <div class="case-list">
+          <article class="case">
+            <div><div class="case-label">Case study 01</div><h3>POS / F&amp;B Transaction Flow</h3><div class="note" data-lang="en">Focus: transaction correctness</div><div class="note" data-lang="id">Fokus: ketepatan transaksi</div></div>
+            <div class="case-content"><h4 data-lang="en">Test objective</h4><h4 data-lang="id">Tujuan pengujian</h4><p data-lang="en">Validate key point-of-sale flows from item selection to purchase completion.</p><p data-lang="id">Memvalidasi alur utama POS dari pemilihan item hingga transaksi selesai.</p><h4 data-lang="en">Coverage to consider</h4><h4 data-lang="id">Cakupan yang dipertimbangkan</h4><p data-lang="en">Required fields, price/total calculation, payment outcome, error handling, and transaction-state consistency.</p><p data-lang="id">Field wajib, perhitungan harga/total, hasil pembayaran, penanganan error, dan konsistensi status transaksi.</p></div>
+          </article>
+          <article class="case">
+            <div><div class="case-label">Case study 02</div><h3>Loyalty / Voucher Rules</h3><div class="note" data-lang="en">Focus: business-rule validation</div><div class="note" data-lang="id">Fokus: validasi aturan bisnis</div></div>
+            <div class="case-content"><h4 data-lang="en">Test objective</h4><h4 data-lang="id">Tujuan pengujian</h4><p data-lang="en">Check that loyalty and voucher behavior follows configured business rules.</p><p data-lang="id">Memeriksa apakah perilaku loyalty dan voucher sesuai aturan bisnis yang dikonfigurasi.</p><h4 data-lang="en">Coverage to consider</h4><h4 data-lang="id">Cakupan yang dipertimbangkan</h4><p data-lang="en">Eligibility, validity period, quota boundary, repeat redemption, user state, and API/UI consistency.</p><p data-lang="id">Kelayakan, masa berlaku, batas kuota, redeem berulang, status pengguna, dan konsistensi API/UI.</p></div>
+          </article>
+          <article class="case">
+            <div><div class="case-label">Case study 03</div><h3>Reservation Management</h3><div class="note" data-lang="en">Focus: customer + back-office flows</div><div class="note" data-lang="id">Fokus: alur pelanggan + back-office</div></div>
+            <div class="case-content"><h4 data-lang="en">Test objective</h4><h4 data-lang="id">Tujuan pengujian</h4><p data-lang="en">Validate customer reservation journeys and back-office management behavior.</p><p data-lang="id">Memvalidasi alur reservasi pelanggan dan perilaku pengelolaan back-office.</p><h4 data-lang="en">Coverage to consider</h4><h4 data-lang="id">Cakupan yang dipertimbangkan</h4><p data-lang="en">Reservation type, date/time, seat availability where applicable, event vs regular booking, and status updates.</p><p data-lang="id">Jenis reservasi, tanggal/waktu, ketersediaan kursi bila berlaku, pemesanan event vs reguler, dan pembaruan status.</p></div>
+          </article>
+          <article class="case">
+            <div><div class="case-label">Case study 04</div><h3>HRIS / Petty Cash Workflow</h3><div class="note" data-lang="en">Focus: permissions and data integrity</div><div class="note" data-lang="id">Fokus: hak akses dan integritas data</div></div>
+            <div class="case-content"><h4 data-lang="en">Test objective</h4><h4 data-lang="id">Tujuan pengujian</h4><p data-lang="en">Check internal workflow rules and data integrity across user roles.</p><p data-lang="id">Memeriksa aturan workflow internal dan integritas data pada berbagai peran pengguna.</p><h4 data-lang="en">Coverage to consider</h4><h4 data-lang="id">Cakupan yang dipertimbangkan</h4><p data-lang="en">Role permissions, approval flow, mandatory fields, valid/invalid inputs, and status transitions.</p><p data-lang="id">Hak akses peran, alur persetujuan, field wajib, input valid/tidak valid, dan transisi status.</p></div>
+          </article>
+        </div>
+        <div class="disclaimer"><span data-lang="en">These case studies are illustrative testing approaches. Add only approved project-specific screenshots, details, or results.</span><span data-lang="id">Studi kasus ini merupakan contoh pendekatan pengujian. Tambahkan hanya screenshot, detail, atau hasil spesifik proyek yang sudah diizinkan.</span></div>
+      </div>
+    </section>
+
+    <section id="artifacts">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-index">05 / <span data-lang="en">Testing artifacts</span><span data-lang="id">Artefak pengujian</span></div><h2 class="section-title" data-lang="en">Clear, reusable QA evidence.</h2><h2 class="section-title" data-lang="id">Bukti QA yang jelas dan dapat digunakan ulang.</h2></div>
+          <p class="section-desc" data-lang="en">Sample formats to demonstrate how scenarios and defects can be documented.</p>
+          <p class="section-desc" data-lang="id">Format contoh untuk menunjukkan bagaimana skenario dan defect dapat didokumentasikan.</p>
+        </div>
+        <div class="artifacts">
+          <article class="artifact">
+            <h3 data-lang="en">Sample test cases</h3><h3 data-lang="id">Contoh test case</h3>
+            <p class="sub" data-lang="en">Illustrative loyalty/API scenarios</p><p class="sub" data-lang="id">Contoh skenario loyalty/API</p>
+            <table class="mini-table">
+              <thead><tr><th>ID</th><th data-lang="en">Scenario</th><th data-lang="id">Skenario</th></tr></thead>
+              <tbody>
+                <tr><td>LOY-01</td><td data-lang="en">Redeem eligible voucher within validity</td><td data-lang="id">Redeem voucher yang masih berlaku</td></tr>
+                <tr><td>LOY-02</td><td data-lang="en">Attempt redemption after expiry</td><td data-lang="id">Redeem setelah masa berlaku</td></tr>
+                <tr><td>LOY-03</td><td data-lang="en">Attempt redemption when quota is exhausted</td><td data-lang="id">Redeem saat kuota habis</td></tr>
+                <tr><td>API-01</td><td data-lang="en">Submit request with missing required field</td><td data-lang="id">Kirim request tanpa field wajib</td></tr>
+              </tbody>
+            </table>
+            <div class="disclaimer"><span data-lang="en">Expected results should be aligned with the approved specification.</span><span data-lang="id">Hasil yang diharapkan harus mengikuti spesifikasi yang disetujui.</span></div>
+          </article>
+          <article class="artifact">
+            <h3 data-lang="en">Sample bug report</h3><h3 data-lang="id">Contoh laporan bug</h3>
+            <p class="sub" data-lang="en">Example structure — not a verified defect</p><p class="sub" data-lang="id">Struktur contoh — bukan defect terverifikasi</p>
+            <div class="bug-box">
+              <b data-lang="en">Title</b><b data-lang="id">Judul</b><br>
+              <span data-lang="en">[Loyalty] Redemption accepted after quota is exhausted</span><span data-lang="id">[Loyalty] Redeem diterima saat kuota habis</span><br><br>
+              <b data-lang="en">Steps</b><b data-lang="id">Langkah</b><br>
+              <span data-lang="en">1. Open voucher page. 2. Attempt redemption. 3. Check response and remaining quota.</span><span data-lang="id">1. Buka halaman voucher. 2. Coba redeem. 3. Periksa respons dan sisa kuota.</span><br><br>
+              <b data-lang="en">Expected</b><b data-lang="id">Ekspektasi</b><br>
+              <span data-lang="en">Request is rejected and quota is not exceeded.</span><span data-lang="id">Request ditolak dan kuota tidak terlampaui.</span><br><br>
+              <b data-lang="en">Actual result</b><b data-lang="id">Hasil aktual</b><br>
+              <span data-lang="en">Fill only after reproducing and capturing evidence.</span><span data-lang="id">Isi setelah reproduksi dan pengambilan bukti.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" style="background:#edf3f1">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-index">06 / <span data-lang="en">Workflow</span><span data-lang="id">Alur kerja</span></div><h2 class="section-title" data-lang="en">From requirements<br>to release insight.</h2><h2 class="section-title" data-lang="id">Dari requirement<br>hingga insight rilis.</h2></div>
+          <p class="section-desc" data-lang="en">A repeatable approach to keep testing focused and findings actionable.</p>
+          <p class="section-desc" data-lang="id">Pendekatan berulang agar pengujian tetap fokus dan temuan dapat ditindaklanjuti.</p>
+        </div>
+        <div class="process">
+          <div class="step"><div class="stepnum">STEP 01</div><h3 data-lang="en">Understand</h3><h3 data-lang="id">Pahami</h3><p data-lang="en">Review requirements, acceptance criteria, designs, and dependencies.</p><p data-lang="id">Tinjau requirement, acceptance criteria, desain, dan dependensi.</p></div>
+          <div class="step"><div class="stepnum">STEP 02</div><h3 data-lang="en">Plan &amp; design</h3><h3 data-lang="id">Rencanakan</h3><p data-lang="en">Identify risk, coverage, test data, and positive/negative scenarios.</p><p data-lang="id">Identifikasi risiko, cakupan, data uji, dan skenario positif/negatif.</p></div>
+          <div class="step"><div class="stepnum">STEP 03</div><h3 data-lang="en">Execute</h3><h3 data-lang="id">Eksekusi</h3><p data-lang="en">Run tests and compare actual behavior with expected results.</p><p data-lang="id">Jalankan tes dan bandingkan perilaku aktual dengan hasil yang diharapkan.</p></div>
+          <div class="step"><div class="stepnum">STEP 04</div><h3 data-lang="en">Report</h3><h3 data-lang="id">Laporkan</h3><p data-lang="en">Document reproducible defects with evidence and impact.</p><p data-lang="id">Dokumentasikan defect yang dapat direproduksi beserta bukti dan dampaknya.</p></div>
+          <div class="step"><div class="stepnum">STEP 05</div><h3 data-lang="en">Retest &amp; regress</h3><h3 data-lang="id">Retest &amp; regresi</h3><p data-lang="en">Verify fixes and check related areas for side effects.</p><p data-lang="id">Verifikasi perbaikan dan periksa area terkait untuk efek samping.</p></div>
+          <div class="step"><div class="stepnum">STEP 06</div><h3 data-lang="en">Communicate</h3><h3 data-lang="id">Komunikasikan</h3><p data-lang="en">Summarize coverage, open risks, and quality observations.</p><p data-lang="id">Rangkum cakupan, risiko terbuka, dan temuan kualitas.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <div class="section-index" style="color:#81d1c8" data-lang="en">Let's connect</div><div class="section-index" style="color:#81d1c8" data-lang="id">Mari terhubung</div>
+            <h2 data-lang="en">Let’s make software<br>work better.</h2><h2 data-lang="id">Mari buat software<br>bekerja lebih baik.</h2>
+            <p data-lang="en">Open to conversations about Software QA, test strategy, manual and automation testing, API validation, and software quality practices.</p>
+            <p data-lang="id">Terbuka untuk diskusi seputar Software QA, strategi pengujian, manual dan automation testing, validasi API, serta praktik kualitas perangkat lunak.</p>
+            <div class="contact-links"><a href="https://www.linkedin.com/in/ramandhaf/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="mailto:ramadhafadilla@gmail.com">Email ↗</a></div>
+          </div>
+          <a class="btn" href="mailto:ramadhafadilla@gmail.com"><span data-lang="en">Send an email</span><span data-lang="id">Kirim email</span> ↗</a>
+        </div>
+        <div class="disclaimer"><b data-lang="en">Before publishing:</b><b data-lang="id">Sebelum dipublikasikan:</b> <span data-lang="en">verify contact details, review every tool for accuracy, and only add project screenshots or metrics that are approved and evidence-backed.</span><span data-lang="id">verifikasi kontak, tinjau keakuratan daftar tools, dan tambahkan screenshot atau metrik proyek hanya jika telah diizinkan dan didukung bukti.</span></div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap"><span>© <span id="year"></span> Muhammad Rhamanda Fadilla</span><span data-lang="en">Built around clarity, evidence, and quality.</span><span data-lang="id">Dibangun dengan fokus pada kejelasan, bukti, dan kualitas.</span></footer>
+  <script>
+    const langToggle = document.getElementById('langToggle');
+    const menuBtn = document.getElementById('menuBtn');
+    const navlinks = document.getElementById('navlinks');
+    let currentLang = 'en';
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'id' : 'en';
+      document.body.classList.toggle('id', currentLang === 'id');
+      document.documentElement.lang = currentLang;
+      langToggle.textContent = currentLang === 'en' ? 'ID / EN' : 'EN / ID';
+    });
+    menuBtn.addEventListener('click', () => navlinks.classList.toggle('open'));
+    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
